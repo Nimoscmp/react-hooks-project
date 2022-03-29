@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/components/app.css'
 
 const App = () => {
   return (
-    <div></div>
+    <h1>hello world</h1>
   )
 }
 
