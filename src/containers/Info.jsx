@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Info() {
 
@@ -33,12 +34,16 @@ function Info() {
           </form>
         </div>
         <div className="Information-buttons">
-          <button type="button" className="Information-back">
-            Regresar
-          </button>
-          <button type="button" className="Information-next">
-            Pagar
-          </button>
+          <Link to="/checkout">
+            <button type="button" className="Information-back">
+              Regresar
+            </button>
+          </Link>
+          <Link to="/checkout/payment">
+            <button type="button" className="Information-next">
+              Pagar
+            </button>
+          </Link>
         </div>
       </div>
 

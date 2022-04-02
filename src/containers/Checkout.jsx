@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Checkout() {
   return (
@@ -13,7 +14,9 @@ function Checkout() {
       </ul>
       <div className="Checkout-sidebar">
         <h3>Precio total: $100</h3>
-        <button type="button">Continuar pedido</button>
+        <Link to="/checkout/information">
+          <button type="button">Continuar pedido</button>
+        </Link>
       </div>
     </section>
   )
