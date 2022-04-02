@@ -2,7 +2,14 @@ import React from 'react'
 
 function Payment() {
   return (
-    <h1>Payment</h1>
+    <section className="Payment">
+      <div className="Payment-content">
+        <h3>Resumen del pedido:</h3>
+        <button type="button" className="Payment-button">
+          Boton de pago con Paypal
+        </button>
+      </div>
+    </section>
   )
 }
 
