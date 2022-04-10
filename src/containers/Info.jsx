@@ -8,23 +8,6 @@ function Info() {
   const form = useRef(null);
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    const formData = new FormData(form.current);
-    const buyer = {
-      'name': formData.get('name'),
-      'email': formData.get('email'),
-      'address': formData.get('address'),
-      'apto': formData.get('apto'),
-      'country': formData.get('country'),
-      'state': formData.get('state'),
-      'city': formData.get('city'),
-      'code': formData.get('code'),
-      'phone': formData.get('phone') 
-    }
-    addToBuyer(buyer);
-    navigate.push('/  checkout/payment');
-  }
-
   const inputsData = [
     {id: 1, type: 'text', placeholder: 'Nombre completo', name: 'name'},
     {id: 2, type: 'email', placeholder: 'Correo electrónico', name: 'email'},
@@ -36,6 +19,18 @@ function Info() {
     {id: 8, type: 'number', placeholder: 'Código postal', name: 'code'},
     {id: 9, type: 'phone', placeholder: 'Teléfono', name: 'phone'},
   ]
+
+  const handleSubmit = () => {
+    const formData = new FormData(form.current);
+    const buyer = {};
+
+    inputsData.forEach(item => {
+      buyer[item.name] = formData.get(item.name)
+    })
+
+    addToBuyer(buyer);
+    navigate.push('/  checkout/payment');
+  }
 
   return (
     <section className="Information">
