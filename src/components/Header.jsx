@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AppContext from '../context/AppContext'
 
 function Header() {
+  const { state } = useContext(AppContext);
+  const { cart } = state;
+
   const data = {
     title: `PlatziConf Merch`
   }
@@ -18,6 +22,11 @@ function Header() {
           Checkout
         </Link>
       </nav>
+      {cart.length &&
+        <div className="Header-alert">
+          {cart.length}
+        </div>
+      }
     </header>
   )
 }

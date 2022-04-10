@@ -1,7 +1,15 @@
-import React from 'react'
-import Product from './Product'
+import React, { useContext } from 'react'
+import Product from './Product';
+import AppContext from '../context/AppContext';
 
-function Products({ products }) {
+function Products() {
+  const { state, addToCart } = useContext(AppContext);
+  const { products } = state;
+
+  const handleAddToCart = product => {
+    addToCart(product)
+  }
+
   return (
     <section className="Products">
       <ul className="Products-items">
@@ -9,6 +17,7 @@ function Products({ products }) {
           <Product 
             key={product.id}
             product={product}
+            handleAddToCart={handleAddToCart}
           />
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Product({ product }) {
+function Product({ product, handleAddToCart }) {
   return (
     <figure className="Products-item">
       <img 
@@ -14,7 +14,10 @@ function Product({ product }) {
         </h2>
         <p>{product.description}</p>
       </div>
-      <button type="button">Comprar</button>
+      <button 
+        type="button"
+        onClick={() => handleAddToCart(product)}  
+      >Comprar</button>
     </figure>
   )
 }
