@@ -29,7 +29,7 @@ function Info() {
     })
 
     addToBuyer(buyer);
-    navigate.push('/  checkout/payment');
+    navigate.push('/checkout/payment');
   }
 
   return (
