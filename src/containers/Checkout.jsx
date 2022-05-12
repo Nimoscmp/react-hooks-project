@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom'
 import AppContext from '../context/AppContext'
 import handleSumTotal from '../utils/totalPrice';
@@ -12,6 +13,10 @@ function Checkout() {
   }
 
   return (
+    <>
+    <Helmet>
+      <title>Lista de pedidos - Platzi Conf Merch</title>
+    </Helmet>
     <section className="Checkout">
       <ul className="Checkout-content">
         {cart.length 
@@ -40,6 +45,7 @@ function Checkout() {
         </div>
       }
     </section>
+    </>
   )
 }
 
